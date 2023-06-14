@@ -33,71 +33,53 @@ class PredictPipeline:
 
 class CustomData:
     def __init__(  self,       
-        radius_mean: float,
-        texture_mean: float,
-        smoothness_mean: float,
-        compactness_mean: float,
-        concavity_mean: float,
-        symmetry_mean: float,
-        fractal_dimension_mean:float,
-        radius_se:float,
-        texture_se:float,
-        smoothness_se:float,
-        compactness_se:float,
-        concavity_se:float,
-        concave_points_se:float,
-        symmetry_se:float,
-        fractal_dimension_se:float,
-        smoothness_worst:float,
-        compactness_worst:float,
-        symmetry_worst:float,
-        fractal_dimension_worst: float):
+        age: int,
+        gender: int,
+        chest_pain: int,
+        rest_bps: int,
+        cholestrol: int,
+        fasting_blood_sugar: int,
+        rest_ecg: int,
+        thalach:int,
+        exer_angina:int,
+        old_peak:float,
+        slope:int,
+        ca:int,
+        thalassemia:int
+        ):
 
-        self.radius_mean = radius_mean
-        self.texture_mean = texture_mean
-        self.smoothness_mean = smoothness_mean
-        self.compactness_mean = compactness_mean
-        self.concavity_mean = concavity_mean
-        self.symmetry_mean = symmetry_mean
-        self.fractal_dimension_mean = fractal_dimension_mean
-        self.radius_se = radius_se
-        self.texture_se = texture_se
-        self.smoothness_se = smoothness_se
-        self.compactness_se = compactness_se
-        self.concavity_se = concavity_se
-        self.concave_points_se = concave_points_se
-        self.symmetry_se = symmetry_se
-        self.fractal_dimension_se = fractal_dimension_se 
-        self.smoothness_worst = smoothness_worst
-        self.compactness_worst = compactness_worst
-        self.symmetry_worst = symmetry_worst
-        self.fractal_dimension_worst = fractal_dimension_worst
+        self.age = age
+        self.gender = gender
+        self.chest_pain = chest_pain
+        self.rest_bps = rest_bps
+        self.cholestrol = cholestrol
+        self.fasting_blood_sugar = fasting_blood_sugar
+        self.rest_ecg = rest_ecg
+        self.thalach = thalach
+        self.exer_angina = exer_angina
+        self.old_peak = old_peak
+        self.slope = slope
+        self.ca = ca
+        self.thalassemia = thalassemia
         
          
-
     def get_data_as_data_frame(self):
         try:
             custom_data_input_dict = {
-                "radius_mean" :  [self.radius_mean],
-                "texture_mean" :  [self.texture_mean],
-                "smoothness_mean" :  [self.smoothness_mean],
-                "compactness_mean" :  [self.compactness_mean],
-                "concavity_mean" :  [self.concavity_mean],
-                "symmetry_mean" :  [self.symmetry_mean],
-                "fractal_dimension_mean" : [self.fractal_dimension_mean],
-                "radius_se" : [self.radius_se],
-                "texture_se" : [self.texture_se],
-                "smoothness_se" : [self.smoothness_se],
-                "compactness_se" : [self.compactness_se],
-                "concavity_se" : [self.concavity_se],
-                "concave_points_se" : [self.concave_points_se],
-                "symmetry_se" : [self.symmetry_se],
-                "fractal_dimension_se" : [self.fractal_dimension_se],
-             "smoothness_worst" : [self.smoothness_worst],
-                "compactness_worst" : [self.compactness_worst],
-                "symmetry_worst" : [self.symmetry_worst],
-                "fractal_dimension_worst" :  [self.fractal_dimension_worst]
-        }
+                "age" :  [self.age],
+                "gender" :  [self.gender],
+                "chest_pain" :  [self.chest_pain],
+                "rest_bps" :  [self.rest_bps],
+                "cholestrol" :  [self.cholestrol],
+                "fasting_blood_sugar" :  [self.fasting_blood_sugar],
+                "rest_ecg" : [self.rest_ecg],
+                "thalach" : [self.thalach],
+                "exer_angina" : [self.exer_angina],
+                "old_peak" : [self.old_peak],
+                "slope" : [self.slope],
+                "ca" : [self.ca],
+                "thalassemia" : [self.thalassemia]
+            }
 
             return pd.DataFrame(custom_data_input_dict)
 

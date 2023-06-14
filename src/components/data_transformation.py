@@ -72,11 +72,11 @@ class DataTransformation:
             test_df.drop_duplicates(inplace=True)
             
             train_df['old_peak'] = np.where(train_df['old_peak']>4.2,4.2,train_df['old_peak'])
-            train_df['rest_bps'] = np.where(train_df['rest_bps']>170.00,170.00,train_df['rest_bps'])
+            train_df['rest_bps'] = np.where(train_df['rest_bps']>170,170,train_df['rest_bps'])
             train_df['cholestrol'] = np.where(train_df['cholestrol']>353.98,353.98,train_df['cholestrol'])
             
             test_df['old_peak'] = np.where(test_df['old_peak']>4.2,4.2,test_df['old_peak'])
-            test_df['rest_bps'] = np.where(test_df['rest_bps']>170.00,170.00,test_df['rest_bps'])
+            test_df['rest_bps'] = np.where(test_df['rest_bps']>170,170,test_df['rest_bps'])
             test_df['cholestrol'] = np.where(test_df['cholestrol']>353.98,353.98,test_df['cholestrol'])
             
             logging.info("Read train and test data completed")

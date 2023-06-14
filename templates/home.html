@@ -1,0 +1,75 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Heart Disease Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint') }}" method="POST">
+        <h1>
+            <legend>Patient's Heart Disease Prediction Status</legend>
+        </h1>
+
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <input type="number" id="gender" name="gender" placeholder="Enter your gender">
+        </div>
+        <div class="form-group">
+            <label for="chest_pain">Chest Pain:</label>
+            <input type="number" id="chest_pain" name="chest_pain" placeholder="Enter your chest_pain">
+        </div>
+        <div class="form-group">
+            <label for="rest_bps">Rest Bps:</label>
+            <input type="number" id="rest_bps" name="rest_bps" placeholder="Enter your rest_bps">
+        </div>
+        <div class="form-group">
+            <label for="cholestrol">Cholestrol:</label>
+            <input type="number" id="cholestrol" name="cholestrol" placeholder="Enter your cholestrol">
+        </div>
+        <div class="form-group">
+            <label for="Fasting Blood Sugar">Fasting Blood Sugar:</label>
+            <input type="number" id="fasting_blood_sugar" name="fasting_blood_sugar" placeholder="Enter your fasting_blood_sugar">
+        </div>
+        <div class="form-group">
+            <label for="rest_ecg">Rest Ecg:</label>
+            <input type="number" id="rest_ecg" name="rest_ecg" placeholder="Enter your rest_ecg">
+        </div>
+        <div class="form-group">
+            <label for="thalach">Thalach:</label>
+            <input type="number" id="thalach" name="thalach" placeholder="Enter your thalach">
+        </div>
+        <div class="form-group">
+            <label for="exer_angina">Exer Angina:</label>
+            <input type="number" id="exer_angina" name="exer_angina" placeholder="Enter your exer_angina">
+        </div>
+        <div class="form-group">
+            <label for="old_peak">Old Peak:</label>
+            <input type="number" id="old_peak" name="old_peak" placeholder="Enter your old_peak">
+        </div>
+        <div class="form-group">
+            <label for="slope">Slope:</label>
+            <input type="number" id="slope" name="slope" placeholder="Enter your slope">
+        </div>
+        <div class="form-group">
+            <label for="ca">CA:</label>
+            <input type="number" id="ca" name="ca" placeholder="Enter your ca">
+        </div>
+        <div class="form-group">
+            <label for="thalassemia">Thalassemia:</label>
+            <input type="number" id="thalassemia" name="thalassemia" placeholder="Enter your thalassemia">
+        </div>
+        
+        <div style="clear:both;"></div>
+            <input type="submit" value="Submit">
+    
+    </form>
+    </div>
+    <div>      
+    <h2>
+      Prediction of Heart Disease 'High Risk - 1','No Risk - 0' is : {{ results }}
+    </h2>
+
+  </body>
+</html>
